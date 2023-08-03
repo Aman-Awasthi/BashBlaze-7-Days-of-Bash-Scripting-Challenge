@@ -1,12 +1,13 @@
 #!/bin/bash
 
-
+#Fuction to show CPU usage
 ShowCpuUsage() {
 	top -bn1 | grep Cpu | awk '{print "Current CPU Usage: " $2 "%"}'
 	echo
 	read -p "Press Enter to continue..."
 }
 
+#Function to show Memory usage
 ShowMemUsage() {
 
     	free -m  | awk 'NR==2{printf "Used memory is %s MB out of %s MB\n", $3, $2}'
@@ -14,13 +15,14 @@ ShowMemUsage() {
 	read -p "Press Enter to continue..."
 }
 
-
+#Function to show Disk uage
 ShowDiskUsage() {
   	df -h | awk 'NR==2{printf "Used disk is %s out of %s\n", $3, $2}'
 	echo
 	read -p "Press Enter to continue..."
 }
 
+#Function to monitor any service or to restart any service
 MonSpecSrvc() {
     
     echo "----- Monitoring service: $1 -----"
@@ -40,13 +42,15 @@ MonSpecSrvc() {
     fi
     read -p "Press Enter to continue..."
 }
+
+#Fuction to handle error
 HandleError() {
 	echo "Invalid choice, please select any of the below option:"
 	echo
 }
     
 
-
+#main function
 main() {
 	echo
 	echo "------Monitoring Metrics Script with Sleep Mechanism------"
