@@ -41,8 +41,8 @@ MonSpecSrvc() {
     read -p "Press Enter to continue..."
 }
 HandleError() {
-	echo "Invalid choice"
-	exit 1
+	echo "Invalid choice, please select any of the below option:"
+	echo
 }
     
 
