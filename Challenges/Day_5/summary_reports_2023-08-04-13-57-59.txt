@@ -1,0 +1,28 @@
+Summary Report
+
+Date of analysis: 2023-08-04-13-57-59
+
+Log file name: Logs.txt
+
+Total lines processed: 50
+
+Total error count: 16
+
+Top 5 error messages with their occurrence count:
+      6 Out of memory
+      4 Invalid input 
+      3 Segmentation fault 
+      2 Disk full 
+      1 Failed to connect
+
+List of critical events with line numbers:
+1:2023-08-04 13:48:06 [CRITICAL]  - 19925
+3:2023-08-04 13:48:06 [CRITICAL]  - 20730
+15:2023-08-04 13:48:06 [CRITICAL]  - 3693
+30:2023-08-04 13:48:06 [CRITICAL]  - 26430
+40:2023-08-04 13:48:06 [CRITICAL]  - 11897
+41:2023-08-04 13:48:06 [CRITICAL]  - 16128
+44:2023-08-04 13:48:06 [CRITICAL]  - 11037
+48:2023-08-04 13:48:06 [CRITICAL]  - 15851
+49:2023-08-04 13:48:06 [CRITICAL]  - 21947
+50:2023-08-04 13:48:06 [CRITICAL]  - 18816
