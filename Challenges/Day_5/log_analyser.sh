@@ -9,19 +9,19 @@ echo "Total Warnings: "
 grep -c WARNING "$1"
 
 echo "---------Total Critical Events---------"
-grep -n CRITICAL logfile.log
+grep -n CRITICAL $1
 
 echo
 echo "-----Total 5 error messages-----"
-grep '\[ERROR\]' logfile.log | awk '{print  $4, $5, $6}' | awk '{sub("-", ""); print}' | sort | uniq -c | sort -nr | head -n 5
+grep '\[ERROR\]' $1 | awk '{print  $4, $5, $6}' | awk '{sub("-", ""); print}' | sort | uniq -c | sort -nr | head -n 5
 
 date_of_analysis=$(date "+%Y-%m-%d-%H-%M-%S")
 summary_report="summary_reports_$date_of_analysis.txt"
 
 total_line_processed=$(wc -l < "$1")
 total_error_count=$(grep -c '\[ERROR\]' "$1")
-top_errors=$(grep '\[ERROR\]' logfile.log | awk '{print  $4, $5, $6}' | awk '{sub("-", ""); print}' | sort | uniq -c | sort -nr | head -n 5)
-critical_event=$(grep -n 'CRITICAL' "$1")
+top_errors=$(grep '\[ERROR\]' "$1" | awk '{print  $4, $5, $6}' | awk '{sub("-", ""); print}' | sort | uniq -c | sort -nr | head -n 5)
+critical_event=$(grep -n '\[CRITICAL\]' "$1")
 
 echo -e "Summary Report\n" > "$summary_report"
 echo -e "Date of analysis: $date_of_analysis\n" >> "$summary_report"
